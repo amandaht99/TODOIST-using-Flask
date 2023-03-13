@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<header>
+    <nav class="heading">
+        <!--img src="images/todoist-logo.jpg" alt="The TODOIST logo" title="The TODOIST logo" height="35" width="35"/-->
+        <h3> TODOIST</h3> 
+        <h5> - Get Your Life Sorted </h5>
+      </nav>
+    <nav>
+      <ul class="navigation_bar">
+        <li class="nav_li"><a href="index.html">Login Page</a></li>
+        <li class="nav_li">My Lists</li>
+        <li class="nav_li"><a href="about.html">About me</a></li>
+      </ul>
+    </nav>
+  </header>
+<h2>My Lists</h2>
+<h3>Welcome &lt;User&gt;, here are your lists</h3>
+<ul>
+{% for slug, list_data in list.items() %}
+  <li>
+    <a href="/lists/{{ slug }}">{{ list_data['name'] }}</a>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

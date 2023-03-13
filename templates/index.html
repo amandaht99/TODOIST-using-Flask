@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<header>
+    <nav class="heading">
+      <!--img src="images/todoist-logo.jpg" alt="The TODOIST logo" title="The TODOIST logo" height="35" width="35"/-->
+      <h3> TODOIST</h3> 
+      <h5> - Get Your Life Sorted </h5>
+    </nav>
+    <nav>
+      <ul class="navigation_bar">
+        <li class="nav_li">Login Page</li>
+        <li class="nav_li"><a href="lists.html">My Lists</a></li>
+        <li class="nav_li"><a href="about.html">About me</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+      <h1> TODOIST</h1>
+      <!--img src="images/todoist-logo.jpg" alt="The TODOIST logo" title="The TODOIST logo" height="142" width="142"/-->
+      <p><strong>TODOIST</strong> is a To-Do list for multiple users in the form of a web application.</p>
+      <div class="login">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Password">
+        <button><a href="lists.html">LOGIN</a></button>
+      </div>
+  </div>
+{% endblock %}
