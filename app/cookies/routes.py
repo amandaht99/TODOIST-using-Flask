@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect
+from app.models import Todo, Topic, User
 
 list_data = {
     'shopping': {'name': 'Shopping List', 'item': 'tomatos'},
@@ -18,8 +19,8 @@ def index_redirect():
 
 @blueprint.route('/lists')
 def lists():
-    lists_list = ['shopping', 'work', 'today']
-    return render_template('lists.html', list=list_data)
+    all_topics = Topic.query.all()
+    return render_template('lists.html', topic=all_topics)
 
 @blueprint.route('/lists.html')
 def lists_redirect():
