@@ -20,3 +20,23 @@ Overall, the purpose of TODOIST is to help you stay organized, focused, and prod
 * Authentification for all users (Registration, Login, Log-out)
 * Users can only create/view/edit/delete their own tasks
 * Users can maybe share a to-do list with another user and collaborate on this 
+
+## Data Models
+class Todo(db.Model):
+  id = db.Column(db.Integer, primary_key=True, unique=True)
+  name = db.Column(db.String(80))
+  description = db.Column(db.String(150))
+  topic_id = db.Column(db.Integer, db.ForeignKey('topic.id'))
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+class Topic(db.Model):
+  id = db.Column(db.Integer, primary_key=True, unique=True)
+  name = db.Column(db.String(20))
+  todos = db.relationship('Todo', backref='topic', lazy=True)
+  users = db.relationship('User', backref='topic', lazy=True)
+  
+class User(db.Model):
+  id = db.Column(db.Integer, primary_key=True, unique=True)
+  username = db.Column(db.String(15), unique=True)
+  email = db.Column(db.String(50), unique=True)
+  password = db.Column(db.String)
