@@ -18,19 +18,19 @@ def index_redirect():
   return redirect('/')
 
 @blueprint.route('/lists')
-def lists():
+def topics():
     all_topics = Topic.query.all()
-    return render_template('lists.html', topic=all_topics)
+    print('bla', all_topics[0])
+    return render_template('lists.html', topics=all_topics)
 
 @blueprint.route('/lists.html')
 def lists_redirect():
   return redirect('/lists')
 
 @blueprint.route('/lists/<slug>')
-def list_items(slug):
-    if slug not in list_data:
-        return "List not found"
-    return render_template('list_items.html', list_name=list_data[slug]['name'], items=list_data[slug]['item'])
+def topic(slug):
+    topic = Topic.query.filter_by(slug=slug).first_or_404()
+    return render_template('list_items.html', topic=topic)
 
 @blueprint.route('/about')
 def about():

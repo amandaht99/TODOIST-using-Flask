@@ -1,15 +1,8 @@
-<!doctype html>
-<html>
-<head>
-  <title>List Items</title>
-</head>
-<body>
-  <h1>{{ list_name }}</h1>
-  <!--<h2>{{items}}</h2>-->
-  <ul>
-    {% for item in items %}
-      <li>{{ items }}</li>
-    {% endfor %}
-  </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Your Lists{% endblock %}
+
+{% block body %}
+  <h1>{{topic.name}}</h1>
+
+{% endblock %}

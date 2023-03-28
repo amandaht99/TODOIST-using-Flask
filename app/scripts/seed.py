@@ -8,7 +8,7 @@ if __name__ == '__main__':
 
 
 topic_data = {
-    'shopping': {'name': 'Shopping'},
+    'shopping': {'name': 'Shopping' },
     'work': {'name': 'Work'},
     'today': {'name': 'Today'},
 }
@@ -19,14 +19,14 @@ user_data = {
     'toby': {'username': 'Toby45', 'email': 'toby45@gmail.com', 'password': 'password'},
 }
 
-for slug, user in user_data.items():
-  new_user = User(username=user['username'], email=user['email'], password=user['password'])
-  db.session.add(new_user)
+for slug, topic in topic_data.items():
+  new_topic = Topic(slug=slug, name=topic['name'])
+  db.session.add(new_topic)
 
 db.session.commit()
 
-for slug, user in user_data.items():
+'''for slug, user in user_data.items():
   new_user = User(username=user['username'], email=user['email'], password=user['password'])
   db.session.add(new_user)
 
-db.session.commit()
+db.session.commit()'''

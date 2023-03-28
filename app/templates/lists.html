@@ -18,9 +18,9 @@
 <h2>My Lists</h2>
 <h3>Welcome &lt;User&gt;, here are your lists</h3>
 <ul>
-{% for slug, list_data in list.items() %}
+{% for topic in topics %}
   <li>
-    <a href="/lists/{{ slug }}">{{ list_data['name'] }}</a>
+    <a href="/lists/{{ topic.slug }}">{{ topic.name }}</a>
   </li>
 {% endfor %}
 </ul>
