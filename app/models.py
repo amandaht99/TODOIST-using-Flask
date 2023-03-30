@@ -1,4 +1,4 @@
-from app.extensions.database import db
+from app.extensions.database import db, CRUDMixin
 
 class Todo(db.Model):
   id = db.Column(db.Integer, primary_key=True, unique=True)
@@ -7,7 +7,7 @@ class Todo(db.Model):
   topic_id = db.Column(db.Integer, db.ForeignKey('topic.id'))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-class Topic(db.Model):
+class Topic(db.Model, CRUDMixin):
   id = db.Column(db.Integer, primary_key=True, unique=True)
   slug = db.Column(db.String(80), unique=True)
   name = db.Column(db.String(20))
