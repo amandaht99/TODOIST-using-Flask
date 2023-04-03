@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, redirect
+from flask import Blueprint, render_template, redirect, request, current_app
 from app.models import Todo, Topic, User
+from app.config import TOPICS_PER_PAGE
 
 list_data = {
     'shopping': {'name': 'Shopping List', 'item': 'tomatos'},
@@ -19,13 +20,14 @@ def index_redirect():
 
 @blueprint.route('/lists')
 def topics():
-    all_topics = Topic.query.all()
-    print('bla', all_topics[0])
-    return render_template('lists.html', topics=all_topics)
+    page_number = request.args.get('page', 1, type=int)
+    #all_topics = Topic.query.all()
+    topics_pagination = Topic.query.paginate(page= page_number, per_page=TOPICS_PER_PAGE)
+    return render_template('lists.html', topics_pagination=topics_pagination)
 
 @blueprint.route('/lists.html')
 def lists_redirect():
-  return redirect('/lists')
+   return redirect('/lists')
 
 @blueprint.route('/lists/<slug>')
 def topic(slug):
@@ -39,13 +41,3 @@ def about():
 @blueprint.route('/about.html')
 def about_redirect():
   return redirect('/about')
-
-"""
-@app.route('/<name>')
-def hello_name(name):
-    return f'Hello, {name}!'
-
-@app.route('/user/<username>')
-def user_profile(username):
-  return render_template('user.html', username=username)
-"""

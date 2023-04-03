@@ -18,10 +18,25 @@
 <h2>My Lists</h2>
 <h3>Welcome &lt;User&gt;, here are your lists</h3>
 <ul>
-{% for topic in topics %}
+{% for topic in topics_pagination.items %}
   <li>
     <a href="/lists/{{ topic.slug }}">{{ topic.name }}</a>
   </li>
 {% endfor %}
 </ul>
+
+<nav>
+  {% if topics_pagination.prev_num %}
+    <a href="{{ url_for('cookies.topics', page=topics_pagination.prev_num) }}">Previous Page</a>
+  {% else %}
+    <span>Previous Page</span>
+  {% endif %}
+    <span> - </span>
+  {% if topics_pagination.next_num %}
+    <a href="{{ url_for('cookies.topics', page=topics_pagination.next_num) }}">Next Page</a>
+  {% else %}
+    <span>Next Page</span>
+  {% endif %}
+</nav>
+
 {% endblock %}
