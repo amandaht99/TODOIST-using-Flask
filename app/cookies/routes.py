@@ -34,9 +34,16 @@ def topic(slug):
     topic = Topic.query.filter_by(slug=slug).first_or_404()
     return render_template('list_items.html', topic=topic)
 
+@blueprint.route('/newlist', methods=['GET', 'POST'])
+def newlist():
+  if request.method == "POST":
+    print(request.form['list-name'])
+    print("amanda")
+  return render_template('newlistform.html')
+
 @blueprint.route('/about')
 def about():
-    return render_template('about.html')
+  return render_template('about.html')
 
 @blueprint.route('/about.html')
 def about_redirect():

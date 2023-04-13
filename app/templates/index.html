@@ -1,10 +1,16 @@
-{% extends 'base.html' %}
-
-
-{% block body %}
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOIST - Get Your Life Sorted</title>
+    <link rel="shortcut icon" type="image/png" href="static\images\TODOIST_favicon.ico"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+  <header>
     <nav class="heading">
-      <!--img src="images/todoist-logo.jpg" alt="The TODOIST logo" title="The TODOIST logo" height="35" width="35"/-->
       <h3> TODOIST</h3> 
       <h5> - Get Your Life Sorted </h5>
     </nav>
@@ -13,18 +19,22 @@
         <li class="nav_li">Login Page</li>
         <li class="nav_li"><a href="lists.html">My Lists</a></li>
         <li class="nav_li"><a href="about.html">About me</a></li>
-        
       </ul>
     </nav>
   </header>
-  <div class="container">
-      <h1> TODOIST</h1>
-      <img src="images/todoist-logo.jpg" alt="The TODOIST logo" title="The TODOIST logo" height="142" width="142"/>
-      <p><strong>TODOIST</strong> is a To-Do list for multiple users in the form of a web application.</p>
-      <div class="login">
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Password">
-        <button><a href="lists.html">LOGIN</a></button>
+  <div class="login-container">
+    <img src="static/images/todoist-logo.jpg" alt="The TODOIST logo" title="The TODOIST logo" height="150" width="150"/>
+    <form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
       </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <input type="submit" value="Login">
+    </form>
   </div>
-{% endblock %}
+</body>
+</html>

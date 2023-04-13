@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Create New Todo-list{% endblock %}
+
+{% block body %}
+    <form>
+        <label for="list-name">List Name:</label>
+        <input type="text" id="list-name" name="list-name" required>
+        <button type="submit">Create List</button>
+    </form>
+
+    
+{% endblock %}

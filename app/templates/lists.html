@@ -1,42 +1,54 @@
-{% extends 'base.html' %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODOIST - Get Your Life Sorted</title>
+  <link rel="shortcut icon" type="image/png" href="static\images\TODOIST_favicon.ico"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
 
-{% block body %}
-<header>
-    <nav class="heading">
-        <!--img src="images/todoist-logo.jpg" alt="The TODOIST logo" title="The TODOIST logo" height="35" width="35"/-->
-        <h3> TODOIST</h3> 
-        <h5> - Get Your Life Sorted </h5>
+<body>
+  <header>
+      <nav class="heading">
+          <h3> TODOIST</h3> 
+          <h5> - Get Your Life Sorted </h5>
+        </nav>
+      <nav>
+        <ul class="navigation_bar">
+          <li class="nav_li"><a href="index.html">Login Page</a></li>
+          <li class="nav_li">My Lists</li>
+          <li class="nav_li"><a href="about.html">About me</a></li>
+        </ul>
       </nav>
-    <nav>
-      <ul class="navigation_bar">
-        <li class="nav_li"><a href="index.html">Login Page</a></li>
-        <li class="nav_li">My Lists</li>
-        <li class="nav_li"><a href="about.html">About me</a></li>
-      </ul>
-    </nav>
-  </header>
-<h2>My Lists</h2>
-<h3>Welcome &lt;User&gt;, here are your lists</h3>
-<ul>
-{% for topic in topics_pagination.items %}
-  <li>
-    <a href="/lists/{{ topic.slug }}">{{ topic.name }}</a>
-  </li>
-{% endfor %}
-</ul>
+    </header>
+  <br>  
+  <br>
+  <br>
+  <h3>Welcome {{ username }}, here are your lists</h3>
 
-<nav>
-  {% if topics_pagination.prev_num %}
-    <a href="{{ url_for('cookies.topics', page=topics_pagination.prev_num) }}">Previous Page</a>
-  {% else %}
-    <span>Previous Page</span>
-  {% endif %}
-    <span> - </span>
-  {% if topics_pagination.next_num %}
-    <a href="{{ url_for('cookies.topics', page=topics_pagination.next_num) }}">Next Page</a>
-  {% else %}
-    <span>Next Page</span>
-  {% endif %}
-</nav>
+  <div class="list-container">
+    
+    {% for topic in topics_pagination.items %}
+      <button class="list_buttons">
+        <a href="/lists/{{ topic.slug }}">{{ topic.name }}</a>
+      </button>
+    {% endfor %}
+    <button class="list_buttons">
+      <h3>+ Add New List</h3>
+    </button>
+  </div>
 
-{% endblock %}
+  <nav class="prev_next">
+    {% if topics_pagination.prev_num %}
+      <a href="{{ url_for('cookies.topics', page=topics_pagination.prev_num) }}">Previous Page</a>
+    {% else %}
+      <span>Previous Page</span>
+    {% endif %}
+      <span> - </span>
+    {% if topics_pagination.next_num %}
+      <a href="{{ url_for('cookies.topics', page=topics_pagination.next_num) }}">Next Page</a>
+    {% else %}
+      <span>Next Page</span>
+    {% endif %}
+  </nav>
+</body>

@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% extends 'base.html' %}
+
+{% block title %}Create New Todo-list{% endblock %}
+
+{% block body %}
+<header>
+    <nav class="heading">
+        <h3> TODOIST</h3> 
+        <h5> - Get Your Life Sorted </h5>
+      </nav>
+    <nav>
+      <ul class="navigation_bar">
+        <li class="nav_li"><a href="index.html">Login Page</a></li>
+        <li class="nav_li">My Lists</li>
+        <li class="nav_li"><a href="about.html">About me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <form class="newlist" action="/newlist" method="post">
+        <h2>Create a new list</h2>
+        <label for="list-name">List Name:</label>
+        <input type="text" id="list-name" name="list-name" required>
+        <button type="submit">Create List</button>
+    </form>
+
+    
+{% endblock %}

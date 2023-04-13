@@ -1,0 +1,169 @@
+header {
+    background-color: #779ECB;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+  }
+  
+  header * {
+    display: inline;
+  }
+  
+  header li {
+    margin: 20px;
+  }
+  
+  header li a {
+    color: blue;
+    text-decoration: none;
+  }
+
+  .navigation_bar {
+    padding: 10px;
+    border: 0px;
+    text-align: right;
+    margin-left: auto;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  img {
+    margin-bottom: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
+  
+  button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #388e3c;
+  }
+
+  .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8rem;
+    padding: 3rem;
+  }
+  
+  .list-box {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    justify-content: center;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 12rem;
+  }
+
+  .list_buttons {
+      background-color: #fff;
+      border-radius: 1rem;
+      border-width: 0.01rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      height: 12rem;
+      justify-content: center;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      width: 12rem;
+      text-align: center;
+      line-height: 10rem;
+      
+    }
+
+  .list_buttons:hover {
+      filter: brightness(95%);
+    }
+  
+  .list-box h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .list-box.add-list {
+    background-color: #f4f4f4;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  .list-box.add-list:hover {
+    opacity: 1;
+  }
+  
+  .list-box.add-list h3 {
+    color: #ccc;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .list-box.add-list h3:hover {
+    color: #333;
+  }
