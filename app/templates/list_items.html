@@ -3,6 +3,12 @@
 {% block title %}Your Lists{% endblock %}
 
 {% block body %}
-  <h1>{{topic.name}}</h1>
+  <h1>{{listname}}</h1>
+  
+  <ul>
+    {% for item in listdesc %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
 
 {% endblock %}

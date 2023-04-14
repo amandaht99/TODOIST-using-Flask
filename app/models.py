@@ -2,8 +2,8 @@ from app.extensions.database import db, CRUDMixin
 
 class Topic(db.Model, CRUDMixin):
   id = db.Column(db.Integer, primary_key=True, unique=True)
-  slug = db.Column(db.String(80), unique=True)
   name = db.Column(db.String(20))
+  description = db.Column(db.String(1024))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
   
 class User(db.Model, CRUDMixin):

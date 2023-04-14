@@ -134,7 +134,7 @@ body {
       width: 12rem;
       text-align: center;
       line-height: 10rem;
-      
+      cursor: pointer;
     }
 
   .list_buttons:hover {

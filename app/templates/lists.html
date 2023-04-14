@@ -15,27 +15,30 @@
         </nav>
       <nav>
         <ul class="navigation_bar">
-          <li class="nav_li"><a href="index.html">Login Page</a></li>
+          <li class="nav_li"><a href="/">Login Page</a></li>
           <li class="nav_li">My Lists</li>
-          <li class="nav_li"><a href="about.html">About me</a></li>
+          <li class="nav_li"><a href="/about">About</a></li>
         </ul>
       </nav>
     </header>
   <br>  
-  <br>
   <br>
   <h3>Welcome {{ username }}, here are your lists</h3>
 
   <div class="list-container">
     
     {% for topic in topics_pagination.items %}
+    <a style="cursor: pointer" href="/lists/{{ topic.id }}">
       <button class="list_buttons">
-        <a href="/lists/{{ topic.slug }}">{{ topic.name }}</a>
+        {{ topic.name }}
       </button>
+    </a>
     {% endfor %}
-    <button class="list_buttons">
-      <h3>+ Add New List</h3>
-    </button>
+    <a style="cursor: pointer" href="/newlist">
+      <button style="font-weight: bold" class="list_buttons">
+        + Add New List
+      </button>
+    </a>
   </div>
 
   <nav class="prev_next">

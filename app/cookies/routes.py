@@ -29,17 +29,34 @@ def topics():
 def lists_redirect():
    return redirect('/lists')
 
-@blueprint.route('/lists/<slug>')
-def topic(slug):
-    topic = Topic.query.filter_by(slug=slug).first_or_404()
-    return render_template('list_items.html', topic=topic)
+@blueprint.route('/lists/<id>')
+def topic(id):
+    topic = Topic.query.filter_by(id=id).first_or_404()
+    listname = topic.name
 
-""" @blueprint.route('/newlist', methods=['GET', 'POST'])
+    listdesc = topic.description.split('\n')
+    return render_template('list_items.html', listname=listname, listdesc=listdesc)
+
+@blueprint.route('/lists/<id>/edit')
+def editlist(id):
+  topic = Topic.query.filter_by(id=id).first_or_404()
+  listname = topic.name
+
+  listdesc = topic.description.split('\n')
+  return render_template('editlistform.html', listname=listname, listdesc=listdesc)
+   
+
+@blueprint.route('/newlist', methods=['GET', 'POST'])
 def newlist():
   if request.method == "POST":
+    topic = Topic(
+      name=request.form['list-name'],
+      description=request.form['list-items']
+    )
+    topic.save()
     print(request.form['list-name'])
-    print("amanda")
-  return render_template('newlistform.html') """
+    print(request.form["list-items"])
+  return render_template('newlistform.html')
 
 """ @blueprint.route('/newlist')
 def post_newlist():

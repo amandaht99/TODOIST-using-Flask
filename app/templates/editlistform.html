@@ -18,12 +18,12 @@
     </nav>
   </header>
 
-    <form class="newlist" action="/newlist" method="post">
-        <h2>Create a new list</h2>
+    <form class="newlist" action="/list/<id>/editlist" method="post">
+        <h2>Edit list:</h2>
         <label for="list-name">List Name:</label>
-        <input type="text" id="list-name" name="list-name" required>
+        <input type="text" id="list-name" name="list-name" value="{{listname}}" required>
         <label for="list-items">To-Do's:</label>
-        <textarea id="list-items" name="list-items" required></textarea>
+        <textarea id="list-items" name="list-items" required>{{"\n".join(listdesc)}}</textarea>
         <button type="submit">Create List</button>
     </form>
 
