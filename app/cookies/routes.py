@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, redirect, request, current_app
 from app.models import Topic, User
 from app.config import TOPICS_PER_PAGE
+from app.extensions.database import db
 
 list_data = {
     'shopping': {'name': 'Shopping List', 'item': 'tomatos'},
@@ -35,16 +36,26 @@ def topic(id):
     listname = topic.name
 
     listdesc = topic.description.split('\n')
-    return render_template('list_items.html', listname=listname, listdesc=listdesc)
+    return render_template('list_items.html', listname=listname, listdesc=listdesc, id=id)
 
-@blueprint.route('/lists/<id>/edit')
+@blueprint.route('/lists/<id>/edit', methods=['GET', 'POST'])
 def editlist(id):
   topic = Topic.query.filter_by(id=id).first_or_404()
-  listname = topic.name
+  if request.method == 'POST':
+    topic.name = request.form['list-name']
+    topic.description = request.form['list-items']
+    db.session.commit()
+    return redirect(f'/lists/{id}')
 
+  listname = topic.name
   listdesc = topic.description.split('\n')
-  return render_template('editlistform.html', listname=listname, listdesc=listdesc)
-   
+  return render_template('editlistform.html', listname=listname, listdesc=listdesc, id=id)
+
+@blueprint.route('/lists/<id>/delete', methods=['POST'])   
+def deletelist(id):
+  topic = Topic.query.filter_by(id=id).first_or_404()
+  topic.delete()
+  return redirect('/lists')
 
 @blueprint.route('/newlist', methods=['GET', 'POST'])
 def newlist():
@@ -56,6 +67,7 @@ def newlist():
     topic.save()
     print(request.form['list-name'])
     print(request.form["list-items"])
+    return redirect('/lists')
   return render_template('newlistform.html')
 
 """ @blueprint.route('/newlist')

@@ -10,5 +10,11 @@
       <li>{{ item }}</li>
     {% endfor %}
   </ul>
+<a href="/lists/{{id}}/edit">
+  <button class="editbutton">Edit</button>
+</a>
+<form action="/lists/{{id}}/delete" method="post">
+  <input type="submit" name="delete" value="Delete" />
+</form>
 
 {% endblock %}
