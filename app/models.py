@@ -1,18 +1,10 @@
 from app.extensions.database import db, CRUDMixin
 
-class Todo(db.Model, CRUDMixin):
-  id = db.Column(db.Integer, primary_key=True, unique=True)
-  name = db.Column(db.String(80))
-  description = db.Column(db.String(150))
-  topic_id = db.Column(db.Integer, db.ForeignKey('topic.id'))
-  user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
 class Topic(db.Model, CRUDMixin):
   id = db.Column(db.Integer, primary_key=True, unique=True)
   slug = db.Column(db.String(80), unique=True)
   name = db.Column(db.String(20))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-  todos = db.relationship('Todo', backref='topic', lazy=True)
   
 class User(db.Model, CRUDMixin):
   id = db.Column(db.Integer, primary_key=True, unique=True)

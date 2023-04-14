@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, request, current_app
-from app.models import Todo, Topic, User
+from app.models import Topic, User
 from app.config import TOPICS_PER_PAGE
 
 list_data = {
@@ -34,12 +34,25 @@ def topic(slug):
     topic = Topic.query.filter_by(slug=slug).first_or_404()
     return render_template('list_items.html', topic=topic)
 
-@blueprint.route('/newlist', methods=['GET', 'POST'])
+""" @blueprint.route('/newlist', methods=['GET', 'POST'])
 def newlist():
   if request.method == "POST":
     print(request.form['list-name'])
     print("amanda")
-  return render_template('newlistform.html')
+  return render_template('newlistform.html') """
+
+""" @blueprint.route('/newlist')
+def post_newlist():
+   # Create a new topic
+   todo = Todo(
+      name=request.form('name')
+   )
+   todo.save()
+
+
+   topics = Topic.query.all()
+   return render_template('newlistform.html', topics=topics) """
+   
 
 @blueprint.route('/about')
 def about():
