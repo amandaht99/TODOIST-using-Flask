@@ -22,7 +22,6 @@ def test_topic_delete(client):
    topic.delete()
 
    deleted_topic = Topic.query.filter_by(slug='house').first()
-   print(deleted_topic)
    assert deleted_topic is None
 
 def test_web_up(client):

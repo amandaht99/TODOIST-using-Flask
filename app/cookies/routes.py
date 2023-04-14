@@ -65,8 +65,6 @@ def newlist():
       description=request.form['list-items']
     )
     topic.save()
-    print(request.form['list-name'])
-    print(request.form["list-items"])
     return redirect('/lists')
   return render_template('newlistform.html')
 
