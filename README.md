@@ -22,21 +22,31 @@ Overall, the purpose of TODOIST is to help you stay organized, focused, and prod
 * Users can maybe share a to-do list with another user and collaborate on this 
 
 ## Data Models
-class Todo(db.Model):
-  id = db.Column(db.Integer, primary_key=True, unique=True)
-  name = db.Column(db.String(80))
-  description = db.Column(db.String(150))
-  topic_id = db.Column(db.Integer, db.ForeignKey('topic.id'))
-  user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-class Topic(db.Model):
+class Topic(db.Model, CRUDMixin):
   id = db.Column(db.Integer, primary_key=True, unique=True)
   name = db.Column(db.String(20))
-  todos = db.relationship('Todo', backref='topic', lazy=True)
-  users = db.relationship('User', backref='topic', lazy=True)
+  description = db.Column(db.String(1024))
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
   
-class User(db.Model):
+class User(db.Model, CRUDMixin):
   id = db.Column(db.Integer, primary_key=True, unique=True)
   username = db.Column(db.String(15), unique=True)
   email = db.Column(db.String(50), unique=True)
   password = db.Column(db.String)
+
+## Deployment
+* Clone the repository:
+git clone https://github.com/username/my-web-app.git
+cd my-web-app
+
+* Install the dependencies:
+pip install -r requirements.txt
+
+* Set the following environment variables:
+DATABASE_URL=sqlite:///database.db
+FLASK_APP=run.py
+
+* Start the development server:
+flask run
+
+* Open your web browser and navigate to https://todoist.onrender.com.
