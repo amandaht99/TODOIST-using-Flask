@@ -52,13 +52,13 @@ git clone https://github.com/amandaht99/TODOIST-using-Flask.git
 
 
 * Install the dependencies:
-$ pip install -r requirements.txt
+  $ pip install -r requirements.txt
 
 * Set the following environment variables:
 DATABASE_URL=sqlite:///database.db
 FLASK_APP=run.py
 
 * Start the development server:
-$ flask run
+  $ flask run
 
 * Open your web browser and navigate to https://todoist.onrender.com.
