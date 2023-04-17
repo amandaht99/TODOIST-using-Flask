@@ -36,17 +36,30 @@ class User(db.Model, CRUDMixin):
 
 ## Deployment
 * Clone the repository:
-git clone https://github.com/username/my-web-app.git
-cd my-web-app
+git clone https://github.com/amandaht99/TODOIST-using-Flask.git
+
+* Create virtual environment:
+  * For Python 3
+- For Python 3:
+  $ python3 -m venv venv
+-  For Python 2:
+  $ virtualenv venv
+
+* Activate virtual environment:
+  * For Linux/Mac:
+    $ source venv/bin/activate
+- For Windows:
+$ venv\Scripts\activate.bat
+
 
 * Install the dependencies:
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 
 * Set the following environment variables:
 DATABASE_URL=sqlite:///database.db
 FLASK_APP=run.py
 
 * Start the development server:
-flask run
+$ flask run
 
 * Open your web browser and navigate to https://todoist.onrender.com.
