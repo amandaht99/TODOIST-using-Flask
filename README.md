@@ -40,16 +40,15 @@ git clone https://github.com/amandaht99/TODOIST-using-Flask.git
 
 * Create virtual environment:
   * For Python 3
-- For Python 3:
-  $ python3 -m venv venv
--  For Python 2:
-  $ virtualenv venv
+    $ python3 -m venv venv
+  * For Python 2:
+    $ virtualenv venv
 
 * Activate virtual environment:
   * For Linux/Mac:
     $ source venv/bin/activate
-- For Windows:
-$ venv\Scripts\activate.bat
+  * For Windows:
+    $ venv\Scripts\activate.bat
 
 
 * Install the dependencies:
