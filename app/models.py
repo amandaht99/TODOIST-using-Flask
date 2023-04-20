@@ -11,7 +11,7 @@ class User(db.Model, CRUDMixin):
   username = db.Column(db.String(15), unique=True)
   email = db.Column(db.String(50), unique=True)
   password = db.Column(db.String)
-
+  topics = db.relationship('Topic', backref='topic', lazy=True)
 
 
 """class Cookie():
