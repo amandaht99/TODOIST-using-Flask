@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Cookieshop | Login{% endblock %}
+
+{% block body %}
+<header>
+    <nav class="heading">
+      <h3> TODOIST</h3> 
+      <h5> - Get Your Life Sorted </h5>
+    </nav>
+    <nav>
+      <ul class="navigation_bar">
+        <li class="nav_li">Login Page</li>
+        <li class="nav_li"><a href="/lists">My Lists</a></li>
+        <li class="nav_li"><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Login</h1>
+
+  <form method="POST">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required>
+    </div>
+    
+    <input type="submit" value="Login">
+  </form>  
+{% endblock %}

@@ -10,7 +10,7 @@ class User(db.Model, CRUDMixin):
   id = db.Column(db.Integer, primary_key=True, unique=True)
   username = db.Column(db.String(15), unique=True)
   email = db.Column(db.String(50), unique=True)
-  password = db.Column(db.String)
+  password = db.Column(db.String(1024))
   topics = db.relationship('Topic', backref='topic', lazy=True)
 
 
