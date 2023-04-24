@@ -23,7 +23,7 @@
     </header>
   <br>  
   <br>
-  <h3>Here are your lists</h3>
+  <h3>{{ current_user.email }} here are your lists</h3>
 
   <div class="list-container">
     
@@ -54,4 +54,18 @@
       <span>Next Page</span>
     {% endif %}
   </nav>
+
+  <br>
+  <br> 
+  <p>"Dreams don't work unless you do" -POPO J</p>
+  
+  <footer>
+    <br>
+    {% if current_user.is_authenticated %}
+      <small>
+        Logged in as {{ current_user.email }}.
+        <a href="{{ url_for('cookies.logout') }}">Logout</a>
+      </small>
+    {% endif %}
+  </footer>
 </body>

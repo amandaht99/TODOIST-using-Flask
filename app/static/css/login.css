@@ -45,7 +45,7 @@ body {
   }
   
   img {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   
   form {
@@ -82,7 +82,7 @@ body {
   }
   
   button[type="submit"] {
-    background-color: #4caf50;
+    background-color: rgb(88, 187, 194);
     color: #fff;
     border: none;
     border-radius: 0.5rem;
@@ -94,7 +94,7 @@ body {
   }
   
   button[type="submit"]:hover {
-    background-color: #388e3c;
+    background-color: rgb(71, 149, 155);
   }
 
   .list-container {
@@ -166,4 +166,8 @@ body {
   
   .list-box.add-list h3:hover {
     color: #333;
+  }
+
+  .newlist {
+
   }

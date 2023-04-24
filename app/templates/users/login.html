@@ -1,38 +1,36 @@
-{% extends 'base.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}"/>
+{% extends 'base.html' %} {% block title %}TODOIST | Login{% endblock %} {%
+block body %}
+<div class="login-container">
+  <br />
+  <br />
+  <img
+    src="static/images/todoist-logo.jpg"
+    alt="The TODOIST logo"
+    title="The TODOIST logo"
+    height="150"
+    width="150"
+  />
 
-{% block title %}Cookieshop | Login{% endblock %}
-
-{% block body %}
-<header>
-    <nav class="heading">
-      <h3> TODOIST</h3> 
-      <h5> - Get Your Life Sorted </h5>
-    </nav>
-    <nav>
-      <ul class="navigation_bar">
-        <li class="nav_li">Login Page</li>
-        <li class="nav_li"><a href="/lists">My Lists</a></li>
-        <li class="nav_li"><a href="/about">About</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <h1>Login</h1>
+  <h4>Login</h4>
 
   <form method="POST">
-    <div>
+    <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
+      <input type="email" id="email" name="email" required />
     </div>
 
-    <div>
+    <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" required>
+      <input type="password" id="password" name="password" required />
     </div>
-    
-    <input type="submit" value="Login">
-  </form>  
-    {% if error %}
-        <p style="color: tomato;">{{ error }}</p>
-    {% endif %}
-{% endblock %}
+
+    <input type="submit" value="Login" />
+  </form>
+  {% if error %}
+  <p style="color: tomato">{{ error }}</p>
+  {% endif %}
+
+  <a href="/register">Not a member yet? Register here</a>
+  {% endblock %}
+</div>

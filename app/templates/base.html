@@ -11,5 +11,14 @@
 </head>
 <body>
   {% block body %}{% endblock %}
+  <footer>
+    <br>
+    {% if current_user.is_authenticated %}
+      <small>
+        Logged in as {{ current_user.email }}.
+        <a href="{{ url_for('cookies.logout') }}">Logout</a>
+      </small>
+    {% endif %}
+  </footer>
 </body>
 </html>
