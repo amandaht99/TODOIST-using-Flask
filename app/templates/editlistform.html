@@ -21,6 +21,7 @@
         <h2>Edit list:</h2>
         <label for="list-name">List Name:</label>
         <input type="text" id="list-name" name="list-name" value="{{listname}}" required>
+        <small>Enter new line to create multiple items</small>
         <label for="list-items">To-Do's:</label>
         <textarea id="list-items" name="list-items" required>{{"\n".join(listdesc)}}</textarea>
         <button type="submit">Update List</button>
