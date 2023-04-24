@@ -20,12 +20,9 @@
         </ul>
       </nav>
     </header>
-  <br>  
-  <br>
-  <h3>{{ current_user.email }} here are your lists</h3>
+    <h4>{{ current_user.email }} here are your lists</h4>
 
   <div class="list-container">
-    
     {% for topic in topics_pagination.items %}
     <a style="cursor: pointer" href="/lists/{{ topic.id }}">
       <button class="list_buttons">
@@ -39,6 +36,10 @@
       </button>
     </a>
   </div>
+
+  <p style="border-left: 4px solid #ccc; font-style: italic;">"Dreams don't work unless you do" -POPO J</p>
+  <br> 
+
 
   <nav class="prev_next">
     {% if topics_pagination.prev_num %}
@@ -54,9 +55,6 @@
     {% endif %}
   </nav>
 
-  <br> 
-  <p>"Dreams don't work unless you do" -POPO J</p>
-  
   <footer>
     <br>
     {% if current_user.is_authenticated %}

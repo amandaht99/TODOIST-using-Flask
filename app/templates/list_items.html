@@ -1,11 +1,18 @@
-<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% extends 'base.html' %}
 
 {% block title %}Your Lists{% endblock %}
 
 {% block body %}
+<header>
+  <nav class="heading">
+      <h3> TODOIST</h3> 
+      <h5> - Get Your Life Sorted </h5>
+    </nav>
+</header>
+
 <a href="/lists">
-  <button class="backbutton">Back</button>
+  <button class="backbutton" >Back</button>
 </a>
   <h1>{{listname}}</h1>
   
@@ -17,8 +24,8 @@
 <a href="/lists/{{id}}/edit">
   <button class="editbutton">Edit</button>
 </a>
-<form action="/lists/{{id}}/delete" method="post">
-  <input type="submit" name="delete" value="Delete" />
-</form>
+  <form class="delete-button-form" action="/lists/{{id}}/delete" method="post">
+    <input class="delete-button" type="submit" name="delete" value="Delete" />
+  </form>
 
 {% endblock %}
