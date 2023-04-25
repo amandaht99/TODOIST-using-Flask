@@ -1,4 +1,7 @@
 # TODOIST
+
+![TODOIST logo](/static/images/todoist-logo.jpg)
+
 ## Project Description
 * TODOIST is a To-Do list for multiple users in the form of a web application
 
@@ -18,7 +21,6 @@ Overall, the purpose of TODOIST is to help you stay organized, focused, and prod
 ## MVP Goals
 * Users and their tasks are saved in a database
 * Authentification for all users (Registration, Login, Log-out)
-* Users can only create/view/edit/delete their own tasks
 * Users can maybe share a to-do list with another user and collaborate on this 
 
 ## Data Models
@@ -62,3 +64,17 @@ FLASK_APP=run.py
   $ flask run
 
 * Open your web browser and navigate to https://todoist.onrender.com.
+
+## Running Tests
+* Activate your virtual environment:
+  * For Linux/Mac:
+    $ source venv/bin/activate
+  * For Windows:
+    $ venv\Scripts\activate.bat
+
+* Set the following environment variables:
+  * FLASK_ENV=development
+  * FLASK_DEBUG=True
+
+* Run the tests:
+  $ pytest -v
