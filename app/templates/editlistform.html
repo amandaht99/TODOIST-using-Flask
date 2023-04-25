@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% extends 'base.html' %}
 
 {% block title %}Create New Todo-list{% endblock %}
@@ -17,6 +16,7 @@
     </nav>
   </header>
 
+<!-- Edit-Form -->
     <form class="newlist" action="/lists/{{id}}/edit" method="post">
         <h2>Edit list:</h2>
         <label for="list-name">List Name:</label>

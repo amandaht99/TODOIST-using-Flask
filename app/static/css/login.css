@@ -1,3 +1,4 @@
+/* Header */
 header {
     background-color: #779ECB;
     position: fixed;
@@ -30,6 +31,7 @@ header {
     margin-left: auto;
   }
 
+/* Body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -48,7 +50,16 @@ body {
   img {
     margin-bottom: 1rem;
   }
+
+  .about-text p {
+    margin-top: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+  }
   
+/* Forms and Inputs */
   form:not(.delete-button-form) {
     display: flex;
     flex-direction: column;
@@ -82,6 +93,7 @@ body {
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
   }
   
+/* Buttons */
   button[type="submit"]:not(.delete-button) {
     background-color: rgb(88, 187, 194);
     color: #fff;
@@ -111,6 +123,7 @@ body {
     cursor: pointer;
   }
 
+/* List Page */
   .list-container {
     display: flex;
     flex-wrap: wrap;
@@ -181,20 +194,12 @@ body {
     color: #333;
   }
 
-  .about-text p {
-    margin-top: 20px;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-      margin-bottom: 20px;
-  }
-
-/* Background Color */
-
+/* Background Color Picker*/
   .color-picker {
     display: flex;
     flex-direction: row;
     gap: 8px;
+    cursor: pointer;
   }
 
   .color-picker-green, .color-picker-red, .color-picker-blue, .color-picker-yellow {

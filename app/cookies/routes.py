@@ -122,19 +122,16 @@ def register():
 """ Login """
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
-  print("login", request.method, request.form, request.form.get("email"))
   if request.method == 'GET':
       return render_template('users/login.html')
   try:
     user = User.query.filter_by(email=request.form.get('email')).first()
-    print("user 1", user)
 
     if not user:
       raise Exception('No user with the given email address was found.')
     elif not check_password_hash(user.password, request.form.get('password')):
       raise Exception('The password does not appear to be correct.')
       
-    print('glgkg', login_user, user)
     login_user(user)
     return redirect('/lists')
       

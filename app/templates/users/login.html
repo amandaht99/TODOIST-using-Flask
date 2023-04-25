@@ -1,17 +1,14 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}"/>
-{% extends 'base.html' %} {% block title %}TODOIST | Login{% endblock %} {%
-block body %}
-<div class="login-container">
-  <br />
-  <br />
-  <img
-    src="static/images/todoist-logo.jpg"
-    alt="The TODOIST logo"
-    title="The TODOIST logo"
-    height="150"
-    width="150"
-  />
+{% extends 'base.html' %} 
 
+{% block title %}TODOIST | Login{% endblock %} 
+
+{% block body %}
+<div class="login-container">
+  <br/>
+  <br/>
+  <img src="static/images/todoist-logo.jpg" alt="The TODOIST logo" title="The TODOIST logo" height="150" width="150"/>
+
+<!-- Login Form -->
   <h4>Login</h4>
 
   <form method="POST">
@@ -27,10 +24,13 @@ block body %}
 
     <input class="login-button" type="submit" value="Login" />
   </form>
+
+<!-- Form Error Text -->
   {% if error %}
   <p style="color: tomato">{{ error }}</p>
   {% endif %}
 
+<!-- Register Link -->
   <a href="/register">Not a member yet? Register here</a>
   {% endblock %}
 </div>

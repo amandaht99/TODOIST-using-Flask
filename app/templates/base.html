@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODOIST - Get Your Life Sorted</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <link rel="shortcut icon" type="image/png" href="static\images\TODOIST_favicon.ico"/>
     <script src="../static/colorPicker.js" defer></script>
   {% endblock %}
@@ -14,11 +15,13 @@
   {% block body %}{% endblock %}
   <footer>
     <br>
+<!-- Logged in confirmation -->
     {% if current_user.is_authenticated %}
       <small>
         Logged in as {{ current_user.email }}.
         <a href="{{ url_for('cookies.logout') }}">Logout</a>
       </small>
+<!-- Background Color Picker -->
       <div class="color-picker" >
         <div class="color-picker-green" id="color-picker-green"></div>
         <div class="color-picker-red" id="color-picker-red"></div>

@@ -1,13 +1,6 @@
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TODOIST - Get Your Life Sorted</title>
-  <link rel="shortcut icon" type="image/png" href="static\images\TODOIST_favicon.ico"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-</head>
+{% extends 'base.html' %}
 
-<body>
+{% block body %}
   <header>
       <nav class="heading">
           <h3> TODOIST</h3> 
@@ -41,7 +34,6 @@
   <br> 
 
 <!--   Pagination -->
-
   <nav class="prev_next">
     {% if topics_pagination.prev_num %}
       <a href="{{ url_for('cookies.topics', page=topics_pagination.prev_num) }}">Previous Page</a>
@@ -56,13 +48,4 @@
     {% endif %}
   </nav>
 
-  <footer>
-    <br>
-    {% if current_user.is_authenticated %}
-      <small>
-        Logged in as {{ current_user.email }}.
-        <a href="{{ url_for('cookies.logout') }}">Logout</a>
-      </small>
-    {% endif %}
-  </footer>
-</body>
+  {% endblock %}
