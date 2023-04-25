@@ -1,6 +1,6 @@
 # TODOIST
 
-![TODOIST logo](../static/images/todoist-logo.jpg)
+![TODOIST logo](app/static/images/todoist-logo.jpg)
 
 ## Project Description
 * TODOIST is a To-Do list for multiple users in the form of a web application
