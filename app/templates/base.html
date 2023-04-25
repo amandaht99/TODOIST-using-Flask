@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODOIST - Get Your Life Sorted</title>
     <link rel="shortcut icon" type="image/png" href="static\images\TODOIST_favicon.ico"/>
+    <script src="../static/colorPicker.js" defer></script>
   {% endblock %}
 </head>
 <body>
@@ -18,6 +19,12 @@
         Logged in as {{ current_user.email }}.
         <a href="{{ url_for('cookies.logout') }}">Logout</a>
       </small>
+      <div class="color-picker" >
+        <div class="color-picker-green" id="color-picker-green"></div>
+        <div class="color-picker-red" id="color-picker-red"></div>
+        <div class="color-picker-blue" id="color-picker-blue"></div>
+        <div class="color-picker-yellow" id="color-picker-yellow"></div>
+      </div>
     {% endif %}
   </footer>
 </body>
