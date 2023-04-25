@@ -5,6 +5,7 @@ from app.extensions.database import db
 from flask_login import login_required, login_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
 list_data = {
     'shopping': {'name': 'Shopping List', 'item': 'tomatos'},
     'work': {'name': 'Work To-Dos', 'item': ['attend meeting at 12', 'practice active listening']},

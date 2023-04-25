@@ -1,7 +1,8 @@
 from app.models import Topic
 
+
+# Page loads and renders cookies
 def test_topics_renders_topics(client):
-    # Page loads and renders cookies
     new_topic = Topic(name='Shopping')
     new_topic.save()
 

@@ -16,11 +16,13 @@
     </nav>
   </header>
 
-<!-- Edit-Form -->
+<!-- Form to edit existing List -->
     <form class="newlist" action="/lists/{{id}}/edit" method="post">
         <h2>Edit list:</h2>
+    <!-- Input with prefilled existing name -->
         <label for="list-name">List Name:</label>
         <input type="text" id="list-name" name="list-name" value="{{listname}}" style="width: 26rem;" required>
+    <!-- Textarea with prefilled existing items -->
         <label for="list-items">To-Do's:</label>
         <textarea id="list-items" name="list-items" style="width: 26rem; height: 10rem;" required>{{"\n".join(listdesc)}}</textarea>
         <small>Enter new line to create multiple items</small>

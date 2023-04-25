@@ -4,6 +4,8 @@ from os import environ
 from flask_migrate import upgrade
 environ['DATABASE_URL'] = 'sqlite://'
 
+
+""" Pytest fixture for app client """
 @pytest.fixture
 def client():
   app = create_app()

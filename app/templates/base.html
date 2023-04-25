@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Defines the header block, sets character encoding and page title, links to CSS stylesheet and JavaScript file, and sets favicon icon -->
 <head>
   {% block head %}
     <meta charset="UTF-8">
@@ -15,13 +17,16 @@
   {% block body %}{% endblock %}
   <footer>
     <br>
-<!-- Logged in confirmation -->
+
+<!-- Checks if user authenticated, displays users email -->
     {% if current_user.is_authenticated %}
       <small>
         Logged in as {{ current_user.email }}.
+    <!-- Link to logout -->
         <a href="{{ url_for('cookies.logout') }}">Logout</a>
       </small>
-<!-- Background Color Picker -->
+
+<!-- Allows user to select background color -->
       <div class="color-picker" >
         <div class="color-picker-green" id="color-picker-green"></div>
         <div class="color-picker-red" id="color-picker-red"></div>

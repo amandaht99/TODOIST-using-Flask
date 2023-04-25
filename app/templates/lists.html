@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Your Lists{% endblock %}
+
 {% block body %}
   <header>
       <nav class="heading">
@@ -13,8 +15,11 @@
         </ul>
       </nav>
     </header>
+
+<!-- Displays user's email  -->
     <h4>{{ current_user.email }} here are your lists</h4>
 
+<!-- Lists topics with buttons -->
   <div class="list-container">
     {% for topic in topics_pagination.items %}
     <a style="cursor: pointer" href="/lists/{{ topic.id }}">
@@ -23,6 +28,8 @@
       </button>
     </a>
     {% endfor %}
+
+<!-- Adds new list button -->
     <a style="cursor: pointer" href="/newlist">
       <button style="font-weight: bold" class="list_buttons">
         + Add New List
@@ -30,10 +37,11 @@
     </a>
   </div>
 
+<!-- Displays quote -->
   <p style="border-left: 4px solid #ccc; font-style: italic;">"Dreams don't work unless you do" -POPO J</p>
   <br> 
 
-<!--   Pagination -->
+<!-- Displays pagination links -->
   <nav class="prev_next">
     {% if topics_pagination.prev_num %}
       <a href="{{ url_for('cookies.topics', page=topics_pagination.prev_num) }}">Previous Page</a>
