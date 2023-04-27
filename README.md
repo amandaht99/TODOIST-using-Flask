@@ -8,6 +8,9 @@
 The purpose of TODOIST is to help you organize and prioritize tasks that you need to complete. By creating a list of tasks, you can keep track of what needs to be done, when it needs to be done, and in what order.
 Overall, the purpose of TODOIST is to help you stay organized, focused, and productive, while minimizing the risk of forgetting important tasks or falling behind on deadlines.
 
+## Website Architecture
+![Website Architecture](app/static/images/amanda.drawio.png)
+
 ## Tech Stack
 * Click 8.1.3
 * Colorama 0.4.6
